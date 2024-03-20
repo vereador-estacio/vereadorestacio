@@ -55,29 +55,33 @@
                                 <!-- To make this form functional, sign up at-->
                                 <!-- https://startbootstrap.com/solution/contact-forms-->
                                 <!-- to get an API token!-->
-                                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                <form id="contactForm" action="https://api.staticforms.xyz/submit" method="post" data-sb-form-api-token="API_TOKEN">
+                                    <input type="hidden" name="accessKey" value="fb371c95-3cb9-4470-8712-6a912f96a69f">
+                                    <!-- Campo que tem função de redirecionar para a aba de contato após enviar a mensagem para o email -->
+                                    <input type="hidden" name="redirectTo" value="https://vereador-estacio.github.io/vereadorestacio/contact.html">
+
                                     <!-- Name input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                        <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
                                         <label for="name">Nome completo</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">O nome é obrigatório.</div>
                                     </div>
                                     <!-- Email address input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                        <input class="form-control" name="e-mail" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
                                         <label for="email">Endereço de email</label>
                                         <div class="invalid-feedback" data-sb-feedback="email:required">É necessário um e-mail.</div>
                                         <div class="invalid-feedback" data-sb-feedback="email:email">E-mail não é válido.</div>
                                     </div>
                                     <!-- Phone number input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                        <input class="form-control" name="phone" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
                                         <label for="phone">Número de telefone</label>
                                         <div class="invalid-feedback" data-sb-feedback="phone:required">É necessário um número de telefone.</div>
                                     </div>
                                     <!-- Message input-->
                                     <div class="form-floating mb-3">
-                                        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                        <textarea class="form-control" name="message" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
                                         <label for="message">Mensagem</label>
                                         <div class="invalid-feedback" data-sb-feedback="message:required">É necessária uma mensagem.</div>
                                     </div>
@@ -99,7 +103,8 @@
                                     <!-- an error submitting the form-->
                                     <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                                     <!-- Submit Button-->
-                                    <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Enviar</button></div>
+                                    <input type="submit" value="Enviar" class="btn btn-primary btn-lg"/>
+                                    <!-- <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Enviar</button></div> -->
                                 </form>
                             </div>
                         </div>
